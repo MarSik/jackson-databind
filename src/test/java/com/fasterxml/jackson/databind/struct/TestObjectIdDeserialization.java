@@ -179,6 +179,11 @@ public class TestObjectIdDeserialization extends BaseMapTest
             Map<Object,WithCustomResolution> pool = (Map<Object,WithCustomResolution>)context.getAttribute(POOL_KEY);
             return new PoolResolver(pool);
         }
+
+        @Override
+        public Object createItem(IdKey id) {
+            return null;
+        }
     }
 
     private final ObjectMapper mapper = new ObjectMapper();
